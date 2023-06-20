@@ -1,12 +1,11 @@
 class QuotesController < ApplicationController
-  before_action :set_quote, only: [:show, :edit, :update, :destroy]
+  before_action :set_quote, only: %i[show edit update destroy]
 
   def index
     @quotes = Quote.ordered
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @quote = Quote.new
@@ -25,8 +24,7 @@ class QuotesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @quote.update(quote_params)
